@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+body {
+
+	box-sizing: border-box;
+	margin: 0;
+
+	background: #C6FFDD;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+	font-family: 'Quicksand', sans-serif;
+
+}
+
+main {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clock {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5%;
+	width: 80vw;
+	/* height: 40vh; */
+	flex-wrap: wrap;
+
+	background-color: rgba(239, 239, 240, 0.4);
+	font-size: 6rem;
+
+	border: 1px solid black;
+}
+
+.clock div
+{
+
+	display: flex;
+}

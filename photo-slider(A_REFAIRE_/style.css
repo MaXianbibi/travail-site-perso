@@ -1,0 +1,45 @@
+main {
+
+	height: 100vH;
+	width: 100vw;
+	
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;	
+}
+
+
+.dogs {
+
+	height: 70%;
+	width: 70%;
+	border: solid 1PX black;
+	background-image: url("img/image1.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.arrow {
+	display: flex;
+	width: 100vw;
+	height: 65%;
+	gap: 12.5%;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+
+	transform: scale(5);
+
+}
+
+.arrow > svg
+{
+
+cursor: pointer;
+
+
+}

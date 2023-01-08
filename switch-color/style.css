@@ -1,0 +1,32 @@
+
+
+* {
+
+	transition: all 0.3s ease 0s;
+
+}
+
+body {
+
+
+
+
+}
+
+
+.container {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.hex-colors {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
