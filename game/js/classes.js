@@ -55,18 +55,45 @@ class Fighter {
 };
 
 class Sprite {
-	constructor({ position,  imageSrc}) {
-		this.position = position;
-		this.width = 50;
-		this.height = 150;
+	constructor({ position,  imageSrc, scale = 1, frameMax = 1}) {
 		this.image = new Image();
+		this.position = position;
 		this.image.src = imageSrc;
+		this.scale = scale;
+		this.frameMax = frameMax;
+		this.frameCurrent = 0;
 	};
 	draw() {
-		c.drawImage(this.image, this.position.x, this.position.y)
+		c.drawImage(
+					this.image,
+					this.frameCurrent * (this.image.width / this.frameMax),
+					0,
+					this.image.width / this.frameMax,
+					this.image.height,
+					this.position.x,
+					this.position.y,
+					(this.image.width / this.frameMax) * this.scale,
+					this.image.height * this.scale
+					)
 	}
 
 	update() {
 		this.draw();
 	}
 };
+
+class Animation extends Sprite {
+	constructor ({ position,  imageSrc, scale = 1, frameMax = 1})
+	{
+		super({ position,  imageSrc, scale, frameMax});
+	}
+
+	// update() {
+	// 	console.log('hello');
+
+	// }
+
+
+
+
+}

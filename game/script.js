@@ -23,6 +23,16 @@ const background = new Sprite({
 	imageSrc: 'img/background.png'
 });
 
+const shop = new Animation({
+	position: {
+		x: 600,
+		y: 128
+	},
+	imageSrc: 'img/shop.png',
+	scale: 2.75,
+	frameMax: 6
+});
+
 const player = new Fighter({
 	position: {
 		x: 0,
@@ -100,6 +110,7 @@ function animate() {
 	c.fillStyle = 'black';
 	c.fillRect(0, 0, canvas.width, canvas.height);
 	background.update();
+	shop.update();
 	update_stats(player);
 	update_stats(enemy);
 
