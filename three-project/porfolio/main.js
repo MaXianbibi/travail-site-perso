@@ -16,7 +16,6 @@ const rayCaster = new THREE.Raycaster();
 
 const colors = [];
 
-console.log(rayCaster);
 const mouse = {
 	x: undefined,
 	y: undefined
@@ -95,18 +94,19 @@ function animate() {
 	rayCaster.setFromCamera(mouse, camera);
 	const intersect = rayCaster.intersectObject(plane);
 
-	// if (intersect.length > 0)
-	// {
-	// 	plane.rotateX(0.05);
-	// 	plane.rotateY(0.05);
-	// }
+	if (intersect.length > 0)
+	{
+		// console.log(intersect[0].object.geometry.attributes.color);
+		intersect[0].object.geometry.attributes.color.setX(0, 1);
+
+		intersect[0].object.geometry.attributes.color.needsUpdate = true;
+		
+	}
 	
 }
 
 for (let i = 0; i < plane.geometry.attributes.position.count; i++)
-{
-	colors.push(0,0, 1);	
-}
+	colors.push(0,0, 1);
 plane.geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 3));
 
 new OrbitControls(camera, renderer.domElement);
@@ -116,5 +116,4 @@ animate();
 addEventListener('mousemove', (event) => {
 	mouse.x = (event.clientX / innerWidth) * 2 - 1;
 	mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-	// console.log(mouse)
 })
